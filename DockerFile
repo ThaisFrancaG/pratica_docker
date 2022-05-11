@@ -1,0 +1,12 @@
+FROM node:16
+
+WORKDIR /usr/src/
+
+COPY . . 
+
+RUN npm i 
+RUN npx prisma generate
+# Eu tenho que adicionar todos os comandos que quero que sejam realizados. Mas só delees existirem aqui, o compose os pega?
+CMD ["node", "run", "dev:migrate" ] 
+
+# Ainda nâo entendi direito quais comandos eu deveria adicionar aqui 
